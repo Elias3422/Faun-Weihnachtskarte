@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frohe Weihnachten</title>
 
 <style>
@@ -88,11 +89,15 @@
 </head>
 <body>
 
+<!-- VIDEO (Dropbox, streambar) -->
 <video autoplay loop playsinline controls>
-    <source src="weihnachten.mov" type="video/quicktime">
+    <source
+        src="https://www.dropbox.com/scl/fi/x32hawbtlddma7olgsirq/weihnachten.mov?rlkey=cqs0l6juqgcclk9f30v53iw4h&raw=1"
+        type="video/quicktime">
     Dein Browser unterstützt kein Video.
 </video>
 
+<!-- TEXT -->
 <div class="overlay">
     <h1>🎄 Frohe Weihnachten</h1>
     <p>
@@ -102,22 +107,26 @@
     </p>
 </div>
 
-<a class="download-btn" href="weihnachten.mov" download>
-    ⬇ Video herunterladen
+<!-- DOWNLOAD BUTTON -->
+<a class="download-btn"
+   href="https://www.dropbox.com/scl/fi/x32hawbtlddma7olgsirq/weihnachten.mov?rlkey=cqs0l6juqgcclk9f30v53iw4h&dl=1"
+   download>
+   ⬇ Video herunterladen
 </a>
 
+<!-- SCHNEEFALL -->
 <script>
     const snowflakes = 50;
 
     for (let i = 0; i < snowflakes; i++) {
-        const s = document.createElement("div");
-        s.className = "snowflake";
-        s.innerHTML = "❄";
-        s.style.left = Math.random() * 100 + "vw";
-        s.style.animationDuration = 5 + Math.random() * 10 + "s";
-        s.style.fontSize = 10 + Math.random() * 20 + "px";
-        s.style.opacity = Math.random();
-        document.body.appendChild(s);
+        const flake = document.createElement("div");
+        flake.className = "snowflake";
+        flake.innerHTML = "❄";
+        flake.style.left = Math.random() * 100 + "vw";
+        flake.style.animationDuration = 5 + Math.random() * 10 + "s";
+        flake.style.fontSize = 10 + Math.random() * 20 + "px";
+        flake.style.opacity = Math.random();
+        document.body.appendChild(flake);
     }
 </script>
 
