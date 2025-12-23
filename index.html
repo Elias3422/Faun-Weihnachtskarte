@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Frohe Weihnachten</title>
 
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+        background: black;
+    }
+
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.45);
+        padding: 30px 40px;
+        border-radius: 14px;
+        animation: fadeIn 3s ease;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .download-btn {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        padding: 14px 22px;
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.4);
+        backdrop-filter: blur(6px);
+        transition: 0.3s;
+    }
+
+    .download-btn:hover {
+        background: rgba(255, 255, 255, 0.35);
+    }
+
+    .snowflake {
+        position: fixed;
+        top: -10px;
+        color: white;
+        user-select: none;
+        pointer-events: none;
+        animation: fall linear infinite;
+        z-index: -1;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh);
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+<body>
+
+<video autoplay loop playsinline controls>
+    <source src="weihnachten.mov" type="video/quicktime">
+    Dein Browser unterstützt kein Video.
+</video>
+
+<div class="overlay">
+    <h1>🎄 Frohe Weihnachten</h1>
+    <p>
+        Wir wünschen euch besinnliche Feiertage,<br>
+        viel Wärme im Herzen<br>
+        und einen guten Start ins neue Jahr.
+    </p>
+</div>
+
+<a class="download-btn" href="weihnachten.mov" download>
+    ⬇ Video herunterladen
+</a>
+
+<script>
+    const snowflakes = 50;
+
+    for (let i = 0; i < snowflakes; i++) {
+        const s = document.createElement("div");
+        s.className = "snowflake";
+        s.innerHTML = "❄";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.animationDuration = 5 + Math.random() * 10 + "s";
+        s.style.fontSize = 10 + Math.random() * 20 + "px";
+        s.style.opacity = Math.random();
+        document.body.appendChild(s);
+    }
+</script>
+
+</body>
+</html>
